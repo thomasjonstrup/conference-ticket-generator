@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .container {
 	width: 100%;
 	max-width: 70rem;
@@ -135,9 +137,9 @@ $sizes: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 100, $auto;
 					}
 				}
 			} @else if $size == $auto {
-				#{map-get($css-property-map, $direction)}: $auto;
+				#{map.get($css-property-map, $direction)}: $auto;
 			} @else {
-				#{map-get($css-property-map, $direction)}: #{$size}px;
+				#{map.get($css-property-map, $direction)}: #{$size}px;
 			}
 		}
 	}
@@ -163,9 +165,9 @@ $sizes: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 100, $auto;
 					}
 				}
 			} @else if $size == $auto {
-				#{map-get($padding-css-property-map, $direction)}: $auto;
+				#{map.get($padding-css-property-map, $direction)}: $auto;
 			} @else {
-				#{map-get($padding-css-property-map, $direction)}: #{$size}px;
+				#{map.get($padding-css-property-map, $direction)}: #{$size}px;
 			}
 		}
 	}

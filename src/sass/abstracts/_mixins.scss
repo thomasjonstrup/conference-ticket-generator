@@ -1,8 +1,9 @@
 @use 'variables' as *;
+@use "sass:map";
 
 // Media query mixin
 @mixin mq($key) {
-	$size: map-get($map: $breakpoints, $key: $key);
+	$size: map.get($map: $breakpoints, $key: $key);
 
 	@if($size) {
 		@media (width > $size) {

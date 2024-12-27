@@ -21,11 +21,12 @@ body {
 		content: "";
 		background-image: url('/pattern-squiggly-line-bottom.svg');
 		background-repeat: no-repeat;
-		position: absolute;
+		position: fixed;
 		left: 0;
 		bottom: 0;
 		width: 65.2rem;
 		height: 22.2rem;
+		z-index: -1;
 	}
 }
 
@@ -40,6 +41,19 @@ body {
 			width: 27.2rem;
 			height: 28.2rem;
 		}
+	&::after {
+			content: "";
+			background-image: url('/pattern-circle.svg');
+			background-repeat: no-repeat;
+			position: absolute;
+			right: 0;
+			top: 23rem;
+			width: 17.2rem;
+			height: 28.2rem;
+			z-index: -1;
+		}
+
+
 }
 
 h1, h2, h3, h4, h5, h6 {
