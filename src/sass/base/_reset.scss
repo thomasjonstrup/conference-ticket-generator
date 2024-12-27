@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+}
+
+input, button, textarea, select {
+	font: inherit;
+}
+
+img,
+picture  {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}

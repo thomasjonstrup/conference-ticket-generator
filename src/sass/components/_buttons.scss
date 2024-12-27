@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+@use 'sass:color' as color;
+
+.button-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.button {
+	@extend %btn;
+	padding: 0.75em 1.5em;
+
+	text-decoration: none;
+
+	border-radius: 0.5em;
+
+	&--primary {
+		color: var(--clr-dark-text);
+		background-color: var(--clr-primary);
+		border: 1px solid var(--clr-secondary);
+
+		&:hover {
+			$color: #f57261;
+
+
+
+				@debug color.adjust($color, $lightness: 5%);
+			background-color: color.adjust($color, $lightness: 5%);
+		}
+	}
+}

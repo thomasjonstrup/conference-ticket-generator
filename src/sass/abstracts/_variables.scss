@@ -1,0 +1,47 @@
+$breakpoints: (
+	sm: 30em,
+	md: 64em,
+	lg: 75em,
+);
+
+/* - Neutral 0: hsl(0, 0%, 100%) -
+Neutral 300: hsl(252, 6%, 83%) -
+Neutral 500: hsl(245, 15%, 58%)
+ Neutral 700: hsl(245, 19%, 35%) -
+ Neutral 900: hsl(248, 70%, 10%) -
+ Orange 500: hsl(7, 88%, 67%) -
+ Orange 700: hsl(7, 71%, 60%) -
+ Gradient (text): hsl(7, 86%, 67%) to hsl(0, 0%, 100%) */
+
+
+$colors: (
+	'text': hsl(0, 0%, 100%),
+	'dark-text':  hsl(248, 70%, 10%),
+	'background': hsl(248, 70%, 10%),
+	'input-background': hsl(245, 19%, 35%),
+	'primary': hsl(7, 88%, 67%),
+	'secondary': #404a5a,
+	'accent': #00f3f3
+);
+
+/**
+ * Use Utopia to generate responsive font sizes
+ * @link https://utopia.fyi/type/calculator
+ */
+ $font-sizes: (
+	"200": 0.765rem,
+	"300": 0.875rem,
+	"400": 1rem,
+	"500": 1.25rem,
+	"600": 1.5rem,
+	"700": 2rem,
+	"800": 2.5rem,
+	"900": 3.5rem,
+ );
+
+ $font-weights: (
+	'light': 300,
+	'regular': 400,
+	'semi-bold': 600,
+	'bold': 700,
+ )

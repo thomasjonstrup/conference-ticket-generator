@@ -1,0 +1,172 @@
+.container {
+	width: 100%;
+	max-width: 70rem;
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+.main-title {
+	font-size: var(--fs-900);
+	margin-block: 0;
+}
+
+.text-highlight {
+	color: var(--clr-accent);
+}
+
+$alignments: (
+	"center",
+	"space-between",
+	"space-around",
+	"space-evenly",
+	"flex-start",
+	"flex-end"
+);
+
+@each $align in $alignments {
+	.justify-#{$align} {
+		justify-content: #{$align};
+	}
+
+	.items-#{$align} {
+		align-items: #{$align};
+	}
+
+	.justify-items-#{$align} {
+		justify-items: #{$align};
+	}
+
+	.content-#{$align} {
+		align-content: #{$align};
+	}
+}
+
+$displayProps: (
+	"block",
+	"inline-block",
+	"inline",
+	"flex",
+	"grid",
+	"inline-flex",
+	"inline-grid",
+	"table",
+	"inline-table",
+	"list-item",
+	"none",
+	"contents"
+);
+
+@each $disp in $displayProps {
+	.d-#{$disp} {
+		display: #{$disp};
+	}
+}
+
+$textAlignments: (
+	'left',
+	'right',
+	'center',
+	'revert'
+);
+
+@each $textAlign in $textAlignments {
+	.text-#{$textAlign} {
+		text-align: #{$textAlign};
+	}
+}
+
+$auto: auto;
+$directions: (
+	't',
+	'b',
+	'l',
+	'r',
+	'x',
+	'y'
+);
+$css-property-map: (
+	't': margin-top,
+	'b': margin-bottom,
+	'l': margin-left,
+	'r': margin-right
+);
+$x-directions: (
+	'margin-left',
+	'margin-right'
+);
+$y-directions: (
+	'margin-top',
+	'margin-bottom'
+);
+
+$padding-css-property-map: (
+	't': padding-top,
+	'b': padding-bottom,
+	'l': padding-left,
+	'r': padding-right
+);
+$padding-x-directions: (
+	'padding-left',
+	'padding-right'
+);
+$padding-y-directions: (
+	'padding-top',
+	'padding-bottom'
+);
+$sizes: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 100, $auto;
+
+@each $direction in $directions {
+	@each $size in $sizes {
+		.m#{$direction}-#{$size} {
+			@if $direction == 'x' {
+				@each $x-direction in $x-directions {
+					@if ($size ==$auto) {
+						#{$x-direction}: $auto;
+					} @else {
+						#{$x-direction}: #{$size}px;
+					}
+				}
+			} @else if $direction == 'y' {
+				@each $y-direction in $y-directions {
+					@if ($size ==$auto) {
+							#{$y-direction}: $auto;
+					}@else {
+							#{$y-direction}: #{$size}px;
+					}
+				}
+			} @else if $size == $auto {
+				#{map-get($css-property-map, $direction)}: $auto;
+			} @else {
+				#{map-get($css-property-map, $direction)}: #{$size}px;
+			}
+		}
+	}
+}
+
+@each $direction in $directions {
+	@each $size in $sizes {
+		.p#{$direction}-#{$size} {
+			@if $direction == 'x' {
+				@each $padding-x-direction in $padding-x-directions {
+					@if ($size ==$auto) {
+						#{$padding-x-direction}: $auto;
+					} @else {
+						#{$padding-x-direction}: #{$size}px;
+					}
+				}
+			} @else if $direction == 'y' {
+				@each $padding-y-direction in $padding-y-directions {
+					@if ($size ==$auto) {
+							#{$padding-y-direction}: $auto;
+					}@else {
+							#{$padding-y-direction}: #{$size}px;
+					}
+				}
+			} @else if $size == $auto {
+				#{map-get($padding-css-property-map, $direction)}: $auto;
+			} @else {
+				#{map-get($padding-css-property-map, $direction)}: #{$size}px;
+			}
+		}
+	}
+}

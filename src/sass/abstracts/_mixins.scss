@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+// Media query mixin
+@mixin mq($key) {
+	$size: map-get($map: $breakpoints, $key: $key);
+
+	@if($size) {
+		@media (width > $size) {
+			@content;
+		}
+	} @else {
+		@error '`#{$key}` is not a valid key in $breakpoints map.';
+	}
+}
+
+// line clamp mixin
+@mixin line-clamp($row-number) {
+	display: -webkit-box;
+	-webkit-line-clamp: $row-number;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

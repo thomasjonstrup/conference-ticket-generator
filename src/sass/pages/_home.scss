@@ -1,0 +1,45 @@
+main {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: center;
+/* 	min-height: 100dvh; */
+	padding-top: 1.5rem;
+}
+
+.content {
+	max-width: 50ch;
+	text-align: center;
+	justify-self: center;
+}
+
+.ticket {
+	display: grid;
+	gap: 1rem;
+	background-image: url('/pattern-ticket.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 280px;
+	width: 600px;
+
+	padding: 1.5rem;
+	margin-top: 2rem;
+	margin-inline: inherit;
+	grid-template-columns: 1fr 48px;
+
+	&__content {
+		display: grid;
+		align-content: space-between;
+	}
+
+	&__number {
+		width: 3em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			font-size: var(--fs-700);
+			transform: rotate(90deg)
+		}
+	}
+}
