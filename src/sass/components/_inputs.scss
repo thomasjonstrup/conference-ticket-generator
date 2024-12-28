@@ -1,7 +1,8 @@
 .fields {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 1.2rem;
+	margin: 1rem 2rem;
 }
 
 .field {
@@ -17,11 +18,18 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
-		padding: 0.5em;
-		background-color: var(--clr-input-background);
-		border: 1px solid var(--clr-text);
+		padding: 0.8em 1em;
+		background-color: var(--neutral-opacity-700);
+		border: 1px solid var(--clr-neutral-700);
+		backdrop-filter: blur(1px);
 		border-radius: 0.5em;
-		color: var(--clr-text);
+		color: var(--clr-neutral-300);
+	}
+
+	.help-text {
+		font-size: var(--fs-200);
+		margin-top: 0.5rem;
+		color: var(--clr-neutral-500);
 	}
 
 	&--error {
@@ -30,8 +38,6 @@
 		}
 
 		.help-text {
-			font-size: var(--fs-200);
-			margin-top: 0.5rem;
 			color: var(--clr-primary);
 		}
 	}

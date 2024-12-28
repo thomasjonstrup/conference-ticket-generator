@@ -10,9 +10,8 @@
 .button {
 	@extend %btn;
 	padding: 0.75em 1.5em;
-
+	font-weight: var(--fw-bold);
 	text-decoration: none;
-
 	border-radius: 0.5em;
 
 	&--primary {
@@ -24,5 +23,22 @@
 			$color: #f57261;
 			background-color: color.adjust($color, $lightness: 5%);
 		}
+	}
+
+	&--secondary {
+		color: var(--clr-text);
+		background-color: var(--clr-neutral-700);
+		border: 1px solid var(--clr-neutral-700);
+		font-weight: var(--fw-300);
+		padding: 0.3em 0.7em;
+
+		&:hover {
+			$colorSecondary: hsl(245, 19%, 35%);
+			background-color: color.adjust($colorSecondary, $lightness: 5%);
+		}
+	}
+
+	&--full {
+		width: 100%;
 	}
 }

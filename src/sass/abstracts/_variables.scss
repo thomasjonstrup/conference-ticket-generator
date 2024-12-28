@@ -13,15 +13,21 @@ Neutral 500: hsl(245, 15%, 58%)
  Orange 700: hsl(7, 71%, 60%) -
  Gradient (text): hsl(7, 86%, 67%) to hsl(0, 0%, 100%) */
 
-
 $colors: (
 	'text': hsl(0, 0%, 100%),
 	'dark-text':  hsl(248, 70%, 10%),
 	'background': hsl(248, 70%, 10%),
+	'neutral-300': hsl(252, 6%, 83%),
+	'neutral-500': hsl(245, 15%, 58%),
+	'neutral-700': hsl(245, 19%, 35%),
+	'neutral-opacity-700': hsla(245, 19%, 35%, 0.13),
+	'neutral-opacity-dark-700': hsla(245, 19%, 35%, 0.31),
+	'neutral-900': hsl(248, 70%, 10%),
 	'input-background': hsl(245, 19%, 35%),
 	'primary': hsl(7, 88%, 67%),
+	'primary-500': hsl(7, 88%, 67%),
 	'secondary': #404a5a,
-	'accent': #00f3f3
+	'accent': #00f3f3,
 );
 
 /**
