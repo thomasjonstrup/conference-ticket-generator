@@ -90,7 +90,7 @@ const App = () => {
 					</div>
 				</> : <>
 					<div className='content'>
-						<h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+						<h1 className='mb-20'>Your Journey to Coding Conf 2025 Starts Here!</h1>
 						<p>
 							Secure your spot at next year's biggest coding
 							conference.
@@ -103,8 +103,8 @@ const App = () => {
 									<label htmlFor='avatar'>Upload Avatar</label>
 									<div className={state.fields?.includes('avatar') ? 'input input--error' : "input"}>
 										<div {...getRootProps({ className: 'upload', disabled: files.length === 1 })}>
-											<input type="file" name="avatar" id='avatar' required style={{ opacity: 0 }} ref={hiddenInputRef} />
-											<input {...getInputProps()} />
+											<input type="file" aria-hidden tabIndex={-1} aria-label='upload' name="avatar" required style={{ opacity: 0, width: '100%'}} ref={hiddenInputRef} />
+											<input {...getInputProps({id: 'avatar'})} />
 
 											<div className="upload__image">
 												{files.length === 1 ? files : <img src={IconUpload} alt="upload" />}
